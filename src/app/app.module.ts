@@ -7,6 +7,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LanguageComponent } from './language/language.component';
+import { HelloComponent } from './razor-payment/hello.component';
+import { RazorPaymentComponent } from './razor-payment/razor-payment.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
@@ -15,12 +17,15 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    LanguageComponent
+    LanguageComponent,
+    RazorPaymentComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
